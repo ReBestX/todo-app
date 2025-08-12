@@ -1,0 +1,128 @@
+/* Basic Reset */
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial,
+    "Apple Color Emoji", "Segoe UI Emoji";
+  background: #f6f7f9;
+  color: #1f2328;
+}
+
+/* App Layout */
+.app {
+  max-width: 680px;
+  margin: 5rem auto;
+  background: #fff;
+  border: 1px solid #e6e8eb;
+  border-radius: 12px;
+  padding: 1.25rem;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+}
+
+h1 {
+  font-size: 1.75rem;
+  margin: 0 0 1rem;
+}
+
+.controls {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+#new-task {
+  padding: 0.75rem 0.875rem;
+  border: 1px solid #d0d7de;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+#new-task:focus {
+  outline: 2px solid #0969da33;
+  border-color: #0969da;
+}
+
+#add-task-btn {
+  padding: 0.75rem 1rem;
+  border: 1px solid #0969da;
+  background: #0969da;
+  color: #fff;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 120ms ease, transform 60ms ease;
+}
+#add-task-btn:hover {
+  background: #085ec3;
+}
+#add-task-btn:active {
+  transform: translateY(1px);
+}
+
+/* Task List */
+ul#task-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.task-item {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.625rem 0.5rem;
+  border-bottom: 1px solid #f0f1f3;
+}
+.task-item:last-child {
+  border-bottom: none;
+}
+
+.task-item input[type="checkbox"] {
+  inline-size: 1.1rem;
+  block-size: 1.1rem;
+  cursor: pointer;
+}
+
+.task-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.task-item.completed .task-text {
+  color: #7a7f87;
+  text-decoration: line-through;
+}
+
+.delete-btn {
+  padding: 0.4rem 0.6rem;
+  border: 1px solid #d0d7de;
+  background: #fff;
+  color: #8a2a2a;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 120ms ease, color 120ms ease, transform 60ms ease;
+}
+.delete-btn:hover {
+  background: #ffe8e8;
+}
+.delete-btn:active {
+  transform: translateY(1px);
+}
+
+/* Accessibility helpers */
+.visually-hidden {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+}
